@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gimme Schema!</title>
+    <style>
+      * {
+        font-family: sans-serif;
+      }
+
+      main {
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      input {
+        padding: 6px;
+        border-radius: 4px;
+        border: 1px solid gray;
+        width: min(450px, 100vw);
+        margin: 24px 0;
+        font-size: 18px;
+      }
+      
+      button {
+        font-size: 22px;
+        padding: 4px 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Gimme Schema!</h1>
+      <form>
+        <input type="text" name="url" />
+        <button>I want it!</button>
+      </form>
+    </main>
+    <script>
+      var form = document.querySelector("form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        location.href = `/schema?url=${form.elements.url.value}`;
+      });
+    </script>
+  </body>
+</html>

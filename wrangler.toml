@@ -1,0 +1,8 @@
+name = "gimme-schema"
+main = "src/index.ts"
+compatibility_date = "2022-06-29"
+
+[[rules]]
+  type = "Text"
+  globs = ["**/*.html"]
+  fallthrough = true
